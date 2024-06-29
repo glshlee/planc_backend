@@ -17,6 +17,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.content
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
+import java.util.UUID
 
 @ExtendWith(SpringExtension::class)
 @WebMvcTest(ExerciseController::class)
@@ -40,8 +41,8 @@ class ExerciseControllerTest {
     fun `when getAllExercises called then return exercise list`() {
         // Given
         val exercises = listOf(
-            Exercise(id = 1, name = "Push-up"),
-            Exercise(id = 2, name = "Sit-up"),
+            Exercise(id = UUID.randomUUID().toString(), name = "Push-up"),
+            Exercise(id = UUID.randomUUID().toString(), name = "Sit-up"),
         )
         `when`(exerciseRepository.findAll()).thenReturn(exercises)
 
