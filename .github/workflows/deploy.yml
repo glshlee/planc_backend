@@ -44,17 +44,17 @@ jobs:
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USER}@${HOST} << EOF
             # Pull the latest Docker image
-            docker pull yourdockerhub/demo-app:${{ github.sha }}
+            docker pull glshlee/planc-backend:${{ github.sha }}
           
             # Stop and remove the old container if it exists
-            docker stop demo-app || true
-            docker rm demo-app || true
+            docker stop planc-backend || true
+            docker rm planc-backend || true
           
             # Run the new container
             docker run -d --name demo-app \
               -p 8080:8080 \
               -e MONGODB_URI='${{ secrets.MONGODB_URI }}' \
-              yourdockerhub/demo-app:${{ github.sha }}
+              glshlee/planc-backend:${{ github.sha }}
           EOF
 
       - name: Cleanup
