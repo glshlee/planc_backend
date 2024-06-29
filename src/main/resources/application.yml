@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: planc_backend
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+  #      uri: mongodb+srv://glshlee:dZpVgPXE6z0vhf8N@planc.rxivowc.mongodb.net/planc?retryWrites=true&w=majority&appName=planc
+  sql:
+    init:
+      mode: never
