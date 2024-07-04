@@ -25,6 +25,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+    implementation("org.springframework.boot:spring-boot-starter-security")
 
     // oci
     implementation("com.oracle.oci.sdk:oci-java-sdk-vault:3.44.0")
@@ -33,6 +34,7 @@ dependencies {
 
     runtimeOnly("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.security:spring-security-test")
 }
 
 noArg {
