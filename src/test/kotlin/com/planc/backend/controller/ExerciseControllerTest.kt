@@ -47,7 +47,7 @@ class ExerciseControllerTest {
         `when`(exerciseRepository.findAll()).thenReturn(exercises)
 
         // When-Then
-        mockMvc.perform(get("/exercises"))
+        mockMvc.perform(get("/api/exercises"))
             .andExpect(status().isOk)
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(content().json(objectMapper.writeValueAsString(exercises)))
