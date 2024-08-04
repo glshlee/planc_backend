@@ -51,7 +51,7 @@ jobs:
             docker rm planc-backend || true
           
             # Run the new container
-            docker run -d --name demo-app \
+            docker run -d --name planc-backend \
               -p 8080:8080 \
               -e MONGODB_URI='${{ secrets.MONGODB_URI }}' \
               glshlee/planc-backend:${{ github.sha }}
